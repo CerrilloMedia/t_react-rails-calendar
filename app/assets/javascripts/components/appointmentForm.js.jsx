@@ -1,12 +1,14 @@
 class AppointmentForm extends React.Component {
   render() {
     return (
-        <form>
-          <input name="title" placeholder="Appointment Title"
-                 value={this.props.input_title}
+        <form onSubmit={this.props.handleFormSubmit }>
+          <input name="title"
+                 placeholder="title"
+                 value={this.props.title}
                  onChange={this.props.handleChange } />
-          <input name="appt_time" placeholder="Appointment date and time"
-                 value={this.props.input_appt_time}
+          <input name="appt_time"
+                 placeholder="date and time"
+                 value={this.props.appt_time}
                  onChange={this.props.handleChange } />
           <input type="submit" value='Make Appointment' />
         </form>

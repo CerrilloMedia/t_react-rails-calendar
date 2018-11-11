@@ -4,30 +4,26 @@ class Appointments extends React.Component {
     super(props);
     this.state = {
       appointments: this.props.appointments,
-      input_title: 'Appointment Title',
-      input_appt_time: 'Tomorrow at 9am'
+      title: '',
+      appt_time: ''
     }
-    this.handleTitleChange = this.handleTitleChange.bind(this)
-    this.handleApptTimeChange = this.handleApptTimeChange.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleTitleChange(e) {
+  handleChange(e) {
+    obj = {};
+    obj[e.target.name] = e.target.value;
     this.setState({
-      input_title: e.target.value
-    })
-  }
-
-  handleApptTimeChange(e) {
-    this.setState({
-      input_appt_time: e.target.value
+      obj
     })
   }
 
   render() {
     return (
       <div>
-        <AppointmentForm input_title={this.state.input_title} handleTitleChange={ this.handleTitleChange }
-                         input_appt_time={this.state.input_appt_time} handleApptTimeChange={ this.handleApptTimeChange }
+        <AppointmentForm title={this.state.title}
+                         appt_time={this.state.appt_time}
+                         handleChange={ this.handleChange }
                          />
         <AppointmentsList appointments={this.state.appointments} />
       </div>

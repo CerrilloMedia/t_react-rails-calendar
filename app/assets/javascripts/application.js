@@ -15,7 +15,8 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
-//= require moment.js
+//= require moment
+//= require react-datetime.min
 //= require components
 //= require jquery
 //= require jquery_ujs

@@ -7,13 +7,11 @@ class Appointments extends React.Component {
       title: '',
       appt_time: ''
     }
-    this.handleChange = this.handleChange.bind(this);
+    this.onUserInput = this.onUserInput.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  handleChange(e) {
-    obj = {};
-    obj[e.target.name] = e.target.value;
+  onUserInput(obj) {
     this.setState(obj);
   }
 
@@ -48,7 +46,7 @@ class Appointments extends React.Component {
       <div>
         <AppointmentForm title={this.state.title}
                          appt_time={this.state.appt_time}
-                         handleChange={ this.handleChange }
+                         onUserInput= { this.onUserInput }
                          handleFormSubmit={ this.handleFormSubmit }
                          />
         <AppointmentsList appointments={this.state.appointments} />
